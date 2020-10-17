@@ -8,7 +8,7 @@ import java.awt.event.KeyListener;
 public class GamePanel extends JPanel implements Runnable, KeyListener {
    private static final long serialVersionUID = 0;
     public static final int WIDTH = 1000;
-    public static final int HEIGHT = 600;
+    public static final int HEIGHT = 700;
 
     private Thread thread;
     private boolean isRunning = false;
