@@ -2,4 +2,4 @@
 Nahush Walvekar
 Alex Liu cmmit
 
-Bradley Chang
+Bradley Chang.
