@@ -17,6 +17,14 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
     private final long targetTime  = 1000/fps;
     private GameStateManager gsm;
 
+    public int getWIDTH() {
+        return this.WIDTH;
+    }
+
+    public int getHEIGHT() {
+        return this.HEIGHT;
+    }
+
     //the size of the game panel
     public GamePanel(){
         setPreferredSize(new Dimension(WIDTH, HEIGHT));

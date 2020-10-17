@@ -1,5 +1,6 @@
 package Package;
 
+
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.Color;
@@ -48,6 +49,7 @@ public class MenuState extends GameState {
 		}
 		if (k == KeyEvent.VK_ENTER) {
 			if (currentSelection == 0) {
+				//gsm.states.push.(new Level1State(gsm));
 				// play 
 			} else if (currentSelection == 1) {
 				// help
