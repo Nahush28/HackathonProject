@@ -13,6 +13,7 @@ public class Player extends Rectangle {
     private boolean right  = false;
     private boolean left = false;
     private boolean jumping = false,falling = false;
+    private boolean jumpReleased = false;
 
     // Move speed
     private double moveSpeed = 2.5;
@@ -74,9 +75,11 @@ public class Player extends Rectangle {
         if(jumping){
             GameState.yOffset -= currentJumpSpeed;
             currentJumpSpeed -= .1;
-
-            if(currentJumpSpeed <= 0){
+            if(jumpReleased && currentJumpSpeed > 0) {
+            	currentJumpSpeed -= 0.05;
+            } else if(currentJumpSpeed <= 0){
                 currentJumpSpeed = jumpSpeed;
+                jumpReleased = false;
                 jumping = false;
                 falling = true;
             }
@@ -85,7 +88,7 @@ public class Player extends Rectangle {
             GameState.yOffset += currentFallSpeed;
 
             if(currentFallSpeed < maxFallSpeed)
-                currentFallSpeed +=.1;
+                currentFallSpeed +=.2;
         }
 
         if(!falling)
@@ -115,6 +118,9 @@ public class Player extends Rectangle {
         }
         if(k == KeyEvent.VK_A) {
             left = false;
+        }
+        if(k == KeyEvent.VK_SPACE) {
+            jumpReleased = true;
         }
         if (!falling) {
             currentFallSpeed = .1;
