@@ -11,7 +11,6 @@ public class Player extends Rectangle {
 
     public Player(int width, int height) {
         setBounds(GamePanel.WIDTH/ 2, GamePanel.HEIGHT / 2, width, height);
-
     }
 
     public void tick() {

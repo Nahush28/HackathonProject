@@ -49,7 +49,7 @@ public class MenuState extends GameState {
 		}
 		if (k == KeyEvent.VK_ENTER) {
 			if (currentSelection == 0) {
-				//gsm.states.push.(new Level1State(gsm));
+				gsm.states.push(new Level1State(gsm));
 				// play 
 			} else if (currentSelection == 1) {
 				// help
