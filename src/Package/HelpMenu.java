@@ -3,28 +3,34 @@ package Package;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.ImageObserver;
+import java.awt.Graphics;
+import javax.swing.JPanel;
+
 
 public class HelpMenu extends JPanel {
 
     public static final int WIDTH = 500;
     public static final int HEIGHT = 500;
     private static JFrame f;
-    private static JPanel p;
-    private static JLabel l;
+
 
     public HelpMenu() {
-        f = new JFrame("Help");
+        f = new JFrame("Help Box");
         f.setVisible(true);
         f.setSize(WIDTH,HEIGHT);
         f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        f.setResizable(false);
+        f.setBackground(Color.gray);
 
-        p.setBackground(Color.gray);
+        JLabel label = new JLabel("Welcome to our game!", JLabel.CENTER);
+        label.setAlignmentX(0);
+        label.setAlignmentY(0);
 
-        l.setText("Hi! Welcome to our game.");
-        l.setFont(new Font("Verdana",1,30));
+        f.add(label);
 
 
     }
+
 
 
 }
