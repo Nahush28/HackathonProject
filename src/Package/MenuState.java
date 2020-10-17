@@ -52,6 +52,7 @@ public class MenuState extends GameState {
 				gsm.states.push(new Level1State(gsm));
 				// play 
 			} else if (currentSelection == 1) {
+				HelpMenu a = new HelpMenu();
 				// help
 			} else if (currentSelection == 2 ) {
 				// quit
