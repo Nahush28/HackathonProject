@@ -2,6 +2,7 @@ package Package;
 import java.awt.Graphics;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.security.cert.CollectionCertStoreParameters;
 import java.util.IllegalFormatWidthException;
 
 public class Player extends Rectangle {
@@ -13,6 +14,8 @@ public class Player extends Rectangle {
     private boolean left = false;
     private boolean jumping = false,falling = false;
 
+    // Move speed
+    private double moveSpeed = 2.5;
     //bounds
     private double x,y;
     private int width, height;
@@ -33,15 +36,40 @@ public class Player extends Rectangle {
         this.height = height;
     }
 
-    public void tick() {
+    public void tick(Block[] b) {
+        int iX = (int)x;
+        int iY = (int)y;
+
+        for (int i = 0; i<b.length; i++){
+            if(Collision.playerBlock(new Point(iX +width+ (int)GameState.xOffset,iY+(int)GameState.yOffset),b[i])|| Collision.playerBlock(new Point(iX+width+(int)GameState.xOffset, iY + height+(int)GameState.yOffset), b[i])) {
+                right = false;
+            }
+
+            if (Collision.playerBlock(new Point(iX + (int)GameState.xOffset, iY + (int)GameState.yOffset), b[i])||Collision.playerBlock(new Point(iX + (int)GameState.xOffset, iY + height + (int)GameState.yOffset),b[i])) {
+                left = false;
+            }
+
+            if (Collision.playerBlock(new Point(iX + (int)GameState.xOffset, iY + (int) GameState.yOffset), b[i])|| Collision.playerBlock(new Point(iX + width + (int) GameState.xOffset, iY + (int) GameState.yOffset),b[i])){
+                jumping = false;
+                falling = true;
+            }
+
+            if (Collision.playerBlock(new Point(iX + (int) GameState.xOffset, iY + height + (int) GameState.yOffset),b[i]) || Collision.playerBlock(new Point(iX + width + (int)GameState.xOffset, iY + height + (int) GameState.yOffset), b[i])){
+                falling = false;
+                break;
+            } else {
+                falling = true;
+            }
+        }
+
         if(right) {
-            x++;
+            GameState.xOffset+=moveSpeed;
         }
         if(left) {
-            x--;
+            GameState.xOffset-=moveSpeed;
         }
         if(jumping){
-            y -= currentJumpSpeed;
+            GameState.yOffset -= currentJumpSpeed;
             currentJumpSpeed -= .1;
 
             if(currentJumpSpeed <= 0){
@@ -51,7 +79,7 @@ public class Player extends Rectangle {
             }
         }
         if(falling){
-            y += currentFallSpeed;
+            GameState.yOffset += currentFallSpeed;
 
             if(currentFallSpeed < maxFallSpeed)
                 currentFallSpeed +=.1;
@@ -85,6 +113,10 @@ public class Player extends Rectangle {
         if(k == KeyEvent.VK_A) {
             left = false;
         }
+        if (!falling) {
+            currentFallSpeed = .1;
+        }
+
     }
 
 }
