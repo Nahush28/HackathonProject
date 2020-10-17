@@ -14,11 +14,13 @@ public class Level1State extends GameState {
 
     public void init() {
         player = new Player(30,30);
+        int xlength = 0;
+        b = new Block[100];
+        for (int i = 0; i<b.length; i++) {
+            b[i] = new Block(xlength+100, 400);
+            xlength += 100;
 
-        b = new Block[2];
-        b[0] = new Block(400,400);
-        b[1] = new Block (100,100);
-
+        }
     }
 
 

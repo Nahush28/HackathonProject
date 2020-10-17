@@ -106,7 +106,9 @@ public class Player extends Rectangle {
             left = true;
         }
 
-        if(k == KeyEvent.VK_SPACE) jumping = true;
+        if(k == KeyEvent.VK_SPACE && jumping!= true && falling!= true) {
+            jumping = true;
+        }
     }
 
     public void keyReleased(int k) {

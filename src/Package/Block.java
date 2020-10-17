@@ -5,7 +5,7 @@ import java.awt.Rectangle;
 
 public class Block extends Rectangle{
 
-    public static final int blocksize = 200;
+    public static final int blocksize = 100;
     public Block(int x, int y) {
         setBounds(x,y,blocksize,blocksize);
     }
