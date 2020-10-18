@@ -101,8 +101,9 @@ public class Player extends Rectangle {
 
 
     public void draw(Graphics g) {
-        g.setColor(Color.BLACK);
-        g.fillRect((int)x,(int)y,width,height);
+        g.drawImage(Images.player[0], (int)x, (int)y, width, height, null);
+        //g.setColor(Color.BLACK);
+        //g.fillRect((int)x,(int)y,width,height);
     }
 
     public void keyPressed(int k) {
