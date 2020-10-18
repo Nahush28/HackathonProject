@@ -60,7 +60,7 @@ public class HelpMenu extends JPanel {
         lMichaelCon.setAlignmentX(0);
         lMichaelCon.setAlignmentY(-10);
 
-        lNahushChang = new JLabel("-Nahush Chang-",JLabel.CENTER);
+        lNahushChang = new JLabel("-Nahush Walvekar-",JLabel.CENTER);
         lNahushChang.setFont(new Font("Serif", Font.PLAIN, 15));
         lNahushChang.setAlignmentX(0);
         lNahushChang.setAlignmentY(-20);
