@@ -11,6 +11,14 @@ public class Block extends Rectangle{
 
     private int id;
 
+    public boolean color = false;
+
+    public Block(int x, int y,boolean color) {
+        setBounds(x,y,blocksize,blocksize);
+        this.color=color;
+        //this.id = id;
+    }
+
     public Block(int x, int y) {
         setBounds(x,y,blocksize,blocksize);
         //this.id = id;
@@ -21,7 +29,14 @@ public class Block extends Rectangle{
     }
 
     public void draw(Graphics g) {
-        g.drawImage(Images.blocks[id], x-(int)GameState.xOffset, y-(int)GameState.yOffset, width, height, null);
+            //g.drawRect(x-(int)GameState.xOffset, y-(int)GameState.yOffset, width, height);
+        if(color){
+            g.setColor(Color.green);
+            g.fillRect(x-(int)GameState.xOffset,y-(int)GameState.yOffset,width,height);
+        }
+        else
+            g.drawImage(Images.blocks[id], x-(int)GameState.xOffset, y-(int)GameState.yOffset, width, height, null);
+
 
     }
 
