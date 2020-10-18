@@ -7,7 +7,6 @@ public class Block extends Rectangle{
     private static final long serialVersionUID = 1L;
 
     public static final int blocksize = 100;
-    public static final int blocksize = 200;
     private int id;
 
     public Block(int x, int y) {
