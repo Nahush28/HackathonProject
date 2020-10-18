@@ -17,7 +17,7 @@ public class Player extends Rectangle {
     // Move speed
     private double moveSpeed = 2.5;
     //bounds
-    private double x,y;
+    public double x,y;
     private int width, height;
 
     //jump speed
@@ -45,6 +45,9 @@ public class Player extends Rectangle {
             if(Collision.playerBlock(new Point(iX +width+ (int)GameState.xOffset,iY+(int)GameState.yOffset+2),b[i])|| Collision.playerBlock(new Point(iX+width+(int)GameState.xOffset, iY + height+(int)GameState.yOffset-1), b[i])) {
                 right = false;
             }
+//            if(!Collision.playerBlock(new Point(iX +width+ (int)GameState.xOffset,iY+(int)GameState.yOffset+2),b[i])) {
+//                right = true;
+//            }
 
             if (Collision.playerBlock(new Point(iX + (int)GameState.xOffset-1, iY + (int)GameState.yOffset+2), b[i])||Collision.playerBlock(new Point(iX + (int)GameState.xOffset-1, iY + height + (int)GameState.yOffset-1),b[i])) {
                 left = false;
@@ -64,6 +67,7 @@ public class Player extends Rectangle {
                 falling = true;
             }
         }
+
 
 
         if(right) {
@@ -94,6 +98,8 @@ public class Player extends Rectangle {
 
     }
 
+
+
     public void draw(Graphics g) {
         g.setColor(Color.BLACK);
         g.fillRect((int)x,(int)y,width,height);
@@ -103,6 +109,7 @@ public class Player extends Rectangle {
         if(k == KeyEvent.VK_D) {
            right = true;
         }
+//        right = true;
         if(k == KeyEvent.VK_A) {
             left = true;
         }

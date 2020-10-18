@@ -30,8 +30,6 @@ public class MenuState extends GameState {
 			}
 			g.setFont(new Font("Arial", Font.PLAIN, 72));
 			g.drawString(options[i], GamePanel.WIDTH / 2 - 75, 150 + i * 150);
-
-
 		}
 
 	}
