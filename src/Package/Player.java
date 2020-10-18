@@ -58,12 +58,13 @@ public class Player extends Rectangle {
             if (Collision.playerBlock(new Point(iX + (int) GameState.xOffset+2, iY + height + (int) GameState.yOffset+1),b[i]) || Collision.playerBlock(new Point(iX + width + (int)GameState.xOffset-1, iY + height + (int) GameState.yOffset+1), b[i])){
                 falling = false;
                 topCollision = true;
-                y = b[i].getY()- height- GameState.yOffset;
+                y = b[i].getY() - height - GameState.yOffset;
             } else {
                 if(!topCollision && !jumping)
                 falling = true;
             }
         }
+
 
         if(right) {
             GameState.xOffset+=moveSpeed;
@@ -100,7 +101,7 @@ public class Player extends Rectangle {
 
     public void keyPressed(int k) {
         if(k == KeyEvent.VK_D) {
-            right = true;
+           right = true;
         }
         if(k == KeyEvent.VK_A) {
             left = true;
