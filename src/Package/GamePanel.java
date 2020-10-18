@@ -11,7 +11,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
     public static final int HEIGHT = 700;
 
     private Thread thread;
-    private boolean isRunning = false;
+    public static boolean isRunning = false;
 
     private final int fps = 60;
     private final long targetTime = 1000 / fps;
@@ -45,6 +45,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         long elapsed;
         long wait;
         gsm = new GameStateManager();
+
         while (isRunning) {
             start = System.nanoTime();
             tick();

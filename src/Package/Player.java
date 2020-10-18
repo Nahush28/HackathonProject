@@ -68,8 +68,6 @@ public class Player extends Rectangle {
             }
         }
 
-
-
         if(right) {
             GameState.xOffset+=moveSpeed;
         }
@@ -95,6 +93,15 @@ public class Player extends Rectangle {
 
         if(!falling)
             currentFallSpeed = .1;
+
+        //PLayer touches the green buttons
+        if(Collision.playerBlock(new Point(iX + (int)GameState.xOffset+2, iY + height + (int) GameState.yOffset+1), b[153])|| Collision.playerBlock(new Point(iX + width + (int) GameState.xOffset-1, iY + height + (int) GameState.yOffset),b[153])) {
+            System.out.println("You Won!");
+            YouWonPanel a = new YouWonPanel();
+        } else if(Collision.playerBlock(new Point(iX + (int)GameState.xOffset+2, iY + height + (int) GameState.yOffset+1), b[154])|| Collision.playerBlock(new Point(iX + width + (int) GameState.xOffset-1, iY + height + (int) GameState.yOffset),b[154])) {
+            System.out.println("You Won!");
+            YouWonPanel a = new YouWonPanel();
+        }
 
     }
 

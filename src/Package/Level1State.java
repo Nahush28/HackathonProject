@@ -49,12 +49,10 @@ public class Level1State extends GameState {
         b[123] = new Block(620,-320);
         b[124] = new Block(400,-420);
         b[125] = new Block(650,-600);
-
         b[126] = new Block(300,-500);
         b[127] = new Block(250,-600);
         b[128] = new Block(400,-725);
         b[129] = new Block(400,-850);
-
         b[130] = new Block(260,-800);
         b[131] = new Block(300,-900);
         b[132] = new Block(500,-950);
@@ -65,7 +63,6 @@ public class Level1State extends GameState {
         b[137] = new Block(300,-1150);
         b[138] = new Block(500,-1300);
         b[139] = new Block(650,-1350);
-
         b[140] = new Block(260,-1350);
         b[141] = new Block(300,-1400);
         b[142] = new Block(500,-1550);
@@ -80,6 +77,7 @@ public class Level1State extends GameState {
         b[151] = new Block(300,-1870);
         b[152] = new Block(500,-1850);
 
+        //Finish line
         b[153] = new Block(400,-1900,true);
         b[154] = new Block(450,-1900,true);
 
