@@ -14,18 +14,18 @@ public class Level1State extends GameState {
 
     public void init() {
         player = new Player(30,30);
-        int ylength = 0;
-        int xtop = 0;
-        int xlength = 300;
+        int ylength = 400;
+        int ytop = 400;
+        int xlength = 250;
         b = new Block[110];
         for (int i = 0; i<b.length-40; i++) {
             b[i] = new Block(200, ylength);
-            ylength += 50;
+            ylength -= 50;
 
         }
         for(int i = 0; i < 50; i++) {
-            b[i+50] = new Block(700, xtop);
-            xtop+=50;
+            b[i+50] = new Block(700, ytop);
+            ytop-=50;
         }
         for (int i = 0; i<10;i++) {
             b[i+100] = new Block (xlength, 400);
