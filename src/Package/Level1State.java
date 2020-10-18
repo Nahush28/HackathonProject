@@ -17,7 +17,7 @@ public class Level1State extends GameState {
         int ylength = 400;
         int ytop = 400;
         int xlength = 250;
-        b = new Block[110];
+        b = new Block[120];
 
         for (int i = 0; i<b.length-40; i++) {
             b[i] = new Block(200, ylength);
@@ -32,7 +32,16 @@ public class Level1State extends GameState {
             b[i+100] = new Block (xlength, 400);
             xlength+=50;
         }
-
+        b[110] = new Block(250,300);
+        b[111] = new Block(650, 300);
+        b[112] = new Block(350, 200);
+        b[113] = new Block(250, 100);
+        b[114] = new Block(450, 0);
+        b[115] = new Block(300, 0);
+        b[116] = new Block(650, 150);
+        b[117] = new Block(500, 100);
+        b[118] = new Block(450, 300);
+        b[119] = new Block(550, 250);
     }
 
 
