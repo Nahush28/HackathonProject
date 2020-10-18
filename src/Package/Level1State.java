@@ -42,6 +42,7 @@ public class Level1State extends GameState {
         b[117] = new Block(500, 100);
         b[118] = new Block(450, 300);
         b[119] = new Block(550, 250);
+
     }
 
 
