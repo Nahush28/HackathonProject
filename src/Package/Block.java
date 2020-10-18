@@ -21,6 +21,10 @@ public class Block extends Rectangle{
     }
 
     public void draw(Graphics g) {
+        g.setColor(Color.blue);
+            //g.drawRect(x-(int)GameState.xOffset, y-(int)GameState.yOffset, width, height);
+            g.drawImage(Images.blocks[id], x-(int)GameState.xOffset, y-(int)GameState.yOffset, width, height, null);
+
 
 
         g.setColor(Color.red);
